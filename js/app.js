@@ -7,6 +7,7 @@
 
     app.controller("TabController", function () {
         this.tab = 1;
+        this.id = 1;
 
         this.setTab = function(tab)
         {
@@ -16,6 +17,7 @@
 
         this.isSet = function(tab)
         {
+            console.log("Isset?" +tab);
             return tab === this.tab;
         };
 
@@ -25,11 +27,11 @@
             {
                 console.log(el.target);
                 console.log(el.currentTarget);
-               var ele =  el.target;
+               var ele =  el.target.parentNode;
                 console.log(ele.parentNode);
                return $(ele).index(ele.parentNode);
             }
-            console.log("Not an event" + $(el).index(el.parentNode));
+            console.log("Not an event" + el.target);
           return $(el).index(el.parentNode);
         };
 
